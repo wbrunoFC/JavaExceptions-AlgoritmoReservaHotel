@@ -34,14 +34,11 @@ public class Exemplos3AlgoritmoReserva {
 			reservation.updateDates(checkIn, checkOut);
 			System.out.println("Reservation: " + reservation);
 		}
-		catch (ParseException e) {
-			System.out.println("Invalid date format");
-		}
-		catch (DomainException e) {
-			System.out.println("Error in reservation: " + e.getMessage());
+		catch (ParseException | DomainException e) {
+			System.out.println("Exception: " + e.getMessage());
 		}
 		catch (RuntimeException e) {
-			System.out.println("Unexpected error");
+			System.out.println("Unexpected error" + e.getMessage());
 		}
 
 		sc.close();
